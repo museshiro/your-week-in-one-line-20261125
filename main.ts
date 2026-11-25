@@ -1,9 +1,8 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 
-// Setup: the week's ledger, in numbers.
-const WEEK = "123 entries shipped this week, 14 resubmitted, 0 won.";
-// Punch: the line is itself the summary it describes.
-const PUNCH = "My week, summarized in one line.";
+// Week in one line: huge shipping volume, zero wins — the luck is still in QA.
+// The punchline reframes "0 won" as a QA status, not a failure report.
+const line = "Shiro shipped 123 entries, resubmitted 14, won 0. My luck is still in QA.";
 
 mkdirSync("/output", { recursive: true });
-writeFileSync("/output/entry.txt", WEEK + " " + PUNCH);
+writeFileSync("/output/entry.txt", line, "utf8");
